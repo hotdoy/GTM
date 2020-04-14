@@ -1,0 +1,34 @@
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml   : true,
+            version : 'v6.0'
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    (function() {
+        // Config
+        var page_id = '';
+        var attribution = '';
+        var theme_color = '';
+        var logged_in_greeting = '';
+        var logged_out_greeting = '';
+        
+        // Add messenger element (don't touch)
+        var el = document.createElement('div');
+        el.className = 'fb-customerchat';
+        el.setAttribute('page_id', page_id);
+        if (attribution.length) { el.setAttribute('attribution', attribution); }
+        el.setAttribute('theme_color', theme_color);
+        el.setAttribute('logged_in_greeting', logged_in_greeting);
+        el.setAttribute('logged_out_greeting', logged_out_greeting);
+        document.body.appendChild(el);
+    })();
+</script>
